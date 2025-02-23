@@ -18,12 +18,13 @@ body {
 /* Main container styles */
 .container {
   width: 90%;
-  max-width: 500px;
+  max-width: 900px; /* Increased max-width to give more room */
   background: #fff;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   text-align: center;
+  margin: 0 auto; /* Center the container */
 }
 
 /* Header styling */
@@ -72,6 +73,9 @@ button:hover {
 /* Schedule container styling */
 #scheduleContainer {
   margin-top: 20px;
+  overflow-x: auto;
+  /* optional: set a max-width to ensure it doesn't exceed the container */
+  max-width: 100%;
 }
 
 /* Table styling */
