@@ -5,28 +5,25 @@ function createPaymentSchedule(
   startDate
 ) {
   const monthlyInterestRate = annualInterestRate / 12 / 100;
-  const monthlyPayment =
-    (principal * monthlyInterestRate) /
-    (1 - Math.pow(1 + monthlyInterestRate, -numMonths));
+  const monthlyInterestPayment = principal * monthlyInterestRate;
+  const monthlyPrincipalPayment = principal / numMonths;
+  const monthlyPayment = monthlyInterestPayment + monthlyPrincipalPayment;
 
   const schedule = [];
   let remainingBalance = principal;
   let currentDate = new Date(startDate);
 
   for (let i = 0; i < numMonths; i++) {
-    const interestPayment = remainingBalance * monthlyInterestRate;
-    const principalPayment = monthlyPayment - interestPayment;
-
     schedule.push({
       month: i + 1,
       date: new Date(currentDate),
       payment: monthlyPayment,
-      principal: principalPayment,
-      interest: interestPayment,
+      principal: monthlyPrincipalPayment,
+      interest: monthlyInterestPayment,
       balance: remainingBalance,
     });
 
-    remainingBalance -= principalPayment;
+    remainingBalance -= monthlyPrincipalPayment;
     currentDate.setMonth(currentDate.getMonth() + 1);
   }
 
