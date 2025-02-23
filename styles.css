@@ -1,85 +1,98 @@
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 20px;
-  padding: 20px;
-  background-color: #f8f9fa;
-  color: #333;
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
 }
 
-h1 {
+/* Center the page content */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Main container styles */
+.container {
+  width: 90%;
+  max-width: 500px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   text-align: center;
+}
+
+/* Header styling */
+h1 {
+  margin-bottom: 20px;
   color: #007bff;
 }
 
-label {
-  font-weight: bold;
-  display: block;
-  margin-top: 10px;
+/* Form group for inputs */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
 }
 
-input {
-  margin: 5px 0;
-  padding: 10px;
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.form-group input {
   width: 100%;
-  max-width: 300px;
-  border: 1px solid #ccc;
+  padding: 10px;
+  border: 1px solid #ddd;
   border-radius: 5px;
 }
 
+/* Button styles */
 button {
-  display: block;
   width: 100%;
-  max-width: 300px;
-  margin-top: 15px;
   padding: 12px;
-  background-color: #28a745;
-  color: white;
+  background: #28a745;
+  color: #fff;
   border: none;
   border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 
 button:hover {
-  background-color: #218838;
+  background: #218838;
 }
 
+/* Schedule container styling */
 #scheduleContainer {
   margin-top: 20px;
-  padding: 15px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Table styling */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
-  background-color: white;
-  border-radius: 10px;
-  overflow: hidden;
+  margin-top: 20px;
 }
 
 th,
 td {
-  border: 1px solid #ddd;
   padding: 12px;
+  border: 1px solid #ddd;
   text-align: center;
 }
 
 th {
-  background-color: #007bff;
-  color: white;
+  background: #007bff;
+  color: #fff;
 }
 
 td {
-  background-color: #f8f9fa;
-}
-
-@media (max-width: 600px) {
-  input,
-  button {
-    width: 100%;
-  }
+  background: #f8f9fa;
 }
